@@ -36,11 +36,23 @@ router.get("/", (req, res) => {
 });
 
 router.post("/", upload.single("image"), (req, res) => {
-  const { type, name, description, location, status } = req.body;
+  const {
+    type,
+    name,
+    title,
+    category,
+    description,
+    location,
+    contactName,
+    contactInfo,
+    status
+  } = req.body;
 
-  if (!type || !name || !description || !location) {
+  const finalName = name || title;
+
+  if (!type || !finalName || !description || !location) {
     return res.status(400).json({
-      error: "type, name, description, and location are required"
+      error: "type, title/name, description, and location are required"
     });
   }
 
@@ -49,9 +61,12 @@ router.post("/", upload.single("image"), (req, res) => {
   const newItem = {
     id: uuidv4(),
     type,
-    name,
+    name: finalName,
+    category: category || "",
     description,
     location,
+    contactName: contactName || "",
+    contactInfo: contactInfo || "",
     status: status || "open",
     image: req.file ? `/uploads/${req.file.filename}` : null,
     createdAt: new Date().toISOString()

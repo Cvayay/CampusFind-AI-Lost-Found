@@ -1,5 +1,3 @@
-// import logo from "../assets/cuup.jpg";
-
 export default function Footer() {
   return (
     <footer
@@ -12,11 +10,11 @@ export default function Footer() {
       }}
     >
       <p style={{ margin: "5px 0", fontWeight: "bold" }}>
-        CampusFind – AI Powered Lost & Found
+        CampusFind - AI Powered Lost & Found
       </p>
 
       <p style={{ margin: "5px 0", fontSize: "14px" }}>
-        Made in CU using <b>Google GenAI (Gemini)</b>
+        Made with ❤️ using <b>Google GenAI (Gemini)</b>
       </p>
 
       <p style={{ margin: "5px 0", fontSize: "13px", opacity: 0.8 }}>
