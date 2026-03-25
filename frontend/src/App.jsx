@@ -35,6 +35,7 @@ export default function App() {
           <Route path="/report-lost" element={<ReportLost />} />
           <Route path="/report-found" element={<ReportFound />} />
           <Route path="/view-items" element={<ViewItems />} />
+          <Route path="*" element={<Home />} />
         </Routes>
       </main>
 
