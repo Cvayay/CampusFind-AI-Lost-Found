@@ -12,7 +12,7 @@ export default function ViewItems() {
     try {
       const response = await fetch('http://localhost:4000/api/items');
       const data = await response.json();
-      setItems(data);
+      setItems(Array.isArray(data) ? data : []);
     } catch {
       setError('Unable to load items. Make sure backend is running on port 4000.');
     } finally {
@@ -30,7 +30,7 @@ export default function ViewItems() {
     try {
       const response = await fetch('http://localhost:4000/api/items/match', { method: 'POST' });
       const data = await response.json();
-      setMatches(data);
+      setMatches(Array.isArray(data) ? data : []);
     } catch {
       setError('AI matching failed.');
     } finally {
