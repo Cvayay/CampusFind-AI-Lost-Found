@@ -24,5 +24,31 @@
     "imageUrl": "",
     "createdAt": "2026-03-16T07:58:53.207Z",
     "status": "open"
+  },
+  {
+    "id": "2048a537-1230-4a7b-87d5-9aba39cdf64f",
+    "type": "lost",
+    "name": "Laptop",
+    "category": "Electrionics",
+    "description": "black colour ",
+    "location": "lab",
+    "contactName": "Ujjwal ",
+    "contactInfo": "demoujjwal@gmail.com",
+    "status": "open",
+    "image": "/uploads/1774419916627-Screenshot 2026-03-16 152739.png",
+    "createdAt": "2026-03-25T06:25:16.657Z"
+  },
+  {
+    "id": "4db44e8e-8b43-47a8-b5c1-ad5d1c308308",
+    "type": "found",
+    "name": "laptop",
+    "category": "Other",
+    "description": "found black laptop",
+    "location": "lab",
+    "contactName": "Ujjwal ",
+    "contactInfo": "demoujjwal@gmail.com",
+    "status": "open",
+    "image": null,
+    "createdAt": "2026-03-25T09:59:58.615Z"
   }
 ]
