@@ -12,38 +12,57 @@ export default function App() {
         minHeight: "100vh",
         display: "flex",
         flexDirection: "column",
-        backgroundColor: "#f8fafc", // Softer, modern background
-        fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
+        backgroundColor: "#FFFFFF",
+        fontFamily: 'Inter, -apple-system, sans-serif',
       }}
     >
+      {/* BOLD TOP BAR */}
+      <div style={{ background: "#000", color: "#fff", padding: "8px 5%", fontSize: "12px", fontWeight: "700", textAlign: "right" }}>
+        CHANDIGARH UNIVERSITY • STUDENT SUPPORT PORTAL
+      </div>
+
       <header
         style={{
-          background: "#0a1128", // Deeper, more "tech" navy/black
-          color: "white",
-          padding: "16px 5%",
+          background: "#FFFFFF",
+          padding: "20px 5%",
           display: "flex",
           justifyContent: "space-between",
           alignItems: "center",
           position: "sticky",
           top: 0,
           zIndex: 1000,
-          boxShadow: "0 4px 20px rgba(0,0,0,0.1)"
+          borderBottom: "6px solid #E11B22", // Extra thick bold underline
         }}
       >
-        <div style={{ cursor: 'pointer' }}>
-          <h1 style={{ margin: 0, fontSize: "22px", fontWeight: "800", letterSpacing: "-0.5px" }}>
-            Campus<span style={{ color: "#6366f1" }}>Find</span>
-          </h1>
-          <p style={{ margin: 0, fontSize: "11px", opacity: 0.7, fontWeight: "500" }}>
-            AI-powered lost & found
-          </p>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '15px' }}>
+          <div style={{ background: "#E11B22", color: "#fff", padding: "10px", fontWeight: "900", fontSize: "24px", lineHeight: "1" }}>
+            CU
+          </div>
+          <div>
+            <h1 style={{ margin: 0, fontSize: "24px", fontWeight: "900", letterSpacing: "-1px", color: "#000" }}>
+              campusFind
+            </h1>
+          </div>
         </div>
 
-        <nav style={{ display: "flex", gap: "24px" }}>
-          <NavLink to="/" style={({ isActive }) => ({ ...linkStyle, opacity: isActive ? 1 : 0.6 })}>Home</NavLink>
-          <NavLink to="/report-lost" style={({ isActive }) => ({ ...linkStyle, opacity: isActive ? 1 : 0.6 })}>Report Lost</NavLink>
-          <NavLink to="/report-found" style={({ isActive }) => ({ ...linkStyle, opacity: isActive ? 1 : 0.6 })}>Report Found</NavLink>
-          <NavLink to="/view-items" style={({ isActive }) => ({ ...linkStyle, opacity: isActive ? 1 : 0.6 })}>View Items</NavLink>
+        <nav style={{ display: "flex", gap: "10px", alignItems: 'center' }}>
+          <NavLink to="/" style={navItem}>HOME</NavLink>
+          <NavLink to="/report-lost" style={navItem}>REPORT LOST</NavLink>
+          <NavLink to="/report-found" style={navItem}>REPORT FOUND</NavLink>
+          
+          <NavLink 
+            to="/view-items" 
+            style={({ isActive }) => ({ 
+              ...navItem({ isActive }),
+              background: "#E11B22", 
+              color: "white", 
+              padding: "12px 24px", 
+              border: "none",
+              marginLeft: "10px"
+            })}
+          >
+            BROWSE ALL
+          </NavLink>
         </nav>
       </header>
 
@@ -62,10 +81,13 @@ export default function App() {
   );
 }
 
-const linkStyle = {
-  color: "white",
+// BOLD NAV LINK STYLE
+const navItem = ({ isActive }) => ({
+  color: "#000",
   textDecoration: "none",
-  fontWeight: "600",
-  fontSize: "14px",
-  transition: "opacity 0.2s ease",
-};
+  fontWeight: "800", // Extra bold
+  fontSize: "13px",
+  padding: "10px 15px",
+  transition: "all 0.2s ease",
+  borderBottom: isActive ? "4px solid #E11B22" : "4px solid transparent",
+});

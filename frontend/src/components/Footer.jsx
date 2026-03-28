@@ -3,53 +3,73 @@ export default function Footer() {
 
   const styles = {
     footer: {
-      marginTop: "auto", // Pushes footer to bottom if page content is short
-      padding: "48px 20px",
-      background: "#0a1128", // Matches the header "Tech Navy"
-      color: "#94a3b8", // Muted text for a premium feel
+      marginTop: "auto",
+      padding: "60px 20px",
+      background: "#000000", // Solid Bold Black
+      color: "#FFFFFF",
       textAlign: "center",
-      fontFamily: '-apple-system, sans-serif',
-      borderTop: '1px solid rgba(255, 255, 255, 0.05)'
+      fontFamily: 'Inter, -apple-system, sans-serif',
+      borderTop: '8px solid #E11B22', // Thick CU Red signature border
     },
     brand: {
       color: "#ffffff",
-      fontSize: "16px",
-      fontWeight: "800",
-      letterSpacing: "-0.5px",
-      marginBottom: "12px",
-      display: "block"
+      fontSize: "22px",
+      fontWeight: "900", // Extra bold
+      letterSpacing: "-1px",
+      marginBottom: "8px",
+      display: "block",
+      textTransform: "uppercase",
+    },
+    cuAccent: {
+      color: "#E11B22",
     },
     divider: {
-      width: "40px",
-      height: "2px",
-      background: "#6366f1", // Using your indigo accent color
-      margin: "20px auto",
-      borderRadius: "2px",
-      opacity: 0.6
+      width: "60px",
+      height: "4px",
+      background: "#E11B22", 
+      margin: "24px auto",
+    },
+    tagline: {
+      fontSize: "14px",
+      fontWeight: "700",
+      letterSpacing: "1px",
+      textTransform: "uppercase",
+      opacity: 0.9,
+      margin: "0"
     },
     link: {
-      color: "#6366f1",
+      color: "#E11B22",
       textDecoration: "none",
-      fontWeight: "600"
+      fontWeight: "800",
+      borderBottom: "2px solid #E11B22"
+    },
+    copyright: {
+      fontSize: "12px",
+      fontWeight: "600",
+      opacity: 0.6,
+      marginTop: "20px",
+      letterSpacing: "0.5px"
     }
   };
 
   return (
     <footer style={styles.footer}>
-      <span style={styles.brand}>Campus<span style={{color: '#6366f1'}}>Find</span></span>
+      <span style={styles.brand}>
+        CU <span style={styles.cuAccent}>campusFind</span>
+      </span>
       
-      <p style={{ fontSize: "14px", margin: "4px 0" }}>
-        Smart Lost & Found for <strong>Chandigarh University</strong>
+      <p style={styles.tagline}>
+        Official Student Support Portal
       </p>
 
       <div style={styles.divider}></div>
 
-      <p style={{ fontSize: "12px", opacity: 0.8, marginBottom: "8px" }}>
-        Powered by <span style={styles.link}>Google Gemini AI</span>
+      <p style={{ fontSize: "15px", marginBottom: "12px", fontWeight: "500" }}>
+        Smart Matching Powered by <span style={styles.link}>GEMINI AI</span>
       </p>
 
-      <p style={{ fontSize: "11px", opacity: 0.5 }}>
-        © {currentYear} CampusFind • Built with ❤️ for the CU Community
+      <p style={styles.copyright}>
+        © {currentYear} CHANDIGARH UNIVERSITY • BUILT FOR THE COMMUNITY
       </p>
     </footer>
   );
