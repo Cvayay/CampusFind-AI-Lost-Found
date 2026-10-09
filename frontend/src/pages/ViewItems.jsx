@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+Import { useEffect, useState } from 'react';
 import ItemCard from '../components/ItemCard.jsx';
 
 export default function ViewItems() {
@@ -9,10 +9,8 @@ export default function ViewItems() {
   const [error, setError] = useState('');
 
   const loadItems = async () => {
-    setError('');
     try {
       const response = await fetch('http://localhost:4000/api/items');
-      if (!response.ok) throw new Error('Failed to fetch items');
       const data = await response.json();
       setItems(Array.isArray(data) ? data : []);
     } catch {
@@ -22,16 +20,12 @@ export default function ViewItems() {
     }
   };
 
-  useEffect(() => {
-    loadItems();
-  }, []);
+  useEffect(() => { loadItems(); }, []);
 
   const runMatching = async () => {
-    setError('');
     setMatching(true);
     try {
       const response = await fetch('http://localhost:4000/api/items/match', { method: 'POST' });
-      if (!response.ok) throw new Error('Matching failed');
       const data = await response.json();
       setMatches(Array.isArray(data) ? data : []);
     } catch {
@@ -48,8 +42,7 @@ export default function ViewItems() {
     aiBtn: {
       background: 'linear-gradient(135deg, #6366f1 0%, #a855f7 100%)',
       color: 'white', border: 'none', padding: '12px 24px', borderRadius: '12px',
-      fontWeight: '600', cursor: matching ? 'not-allowed' : 'pointer', opacity: matching ? 0.7 : 1,
-      boxShadow: '0 4px 15px rgba(168, 85, 247, 0.2)'
+      fontWeight: '600', cursor: 'pointer', boxShadow: '0 4px 15px rgba(168, 85, 247, 0.2)'
     },
     statsRow: { display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '20px', marginBottom: '40px' },
     statCard: { background: '#fff', padding: '24px', borderRadius: '20px', border: '1px solid #f0f0f0', textAlign: 'center' },
@@ -72,11 +65,11 @@ export default function ViewItems() {
 
       <div style={s.statsRow}>
         <div style={s.statCard}>
-          <span style={s.statNum}>{items.filter(i => i?.type === 'lost').length}</span>
+          <span style={s.statNum}>{items.filter(i => i.type === 'lost').length}</span>
           <span style={s.statLabel}>Lost Items</span>
         </div>
         <div style={s.statCard}>
-          <span style={s.statNum}>{items.filter(i => i?.type === 'found').length}</span>
+          <span style={s.statNum}>{items.filter(i => i.type === 'found').length}</span>
           <span style={s.statLabel}>Found Items</span>
         </div>
         <div style={s.statCard}>
@@ -93,13 +86,11 @@ export default function ViewItems() {
               <div key={idx} style={{ background: '#fff', padding: '20px', borderRadius: '16px', border: '1px solid #cbd5e1', display: 'flex', justifyContent: 'space-between' }}>
                 <div>
                   <span style={{ fontSize: '12px', fontWeight: '700', color: '#6366f1' }}>MATCH FOUND</span>
-                  <p style={{ margin: '4px 0' }}>
-                    <strong>{match?.lostItem?.title || 'Unknown Item'}</strong> ↔️ <strong>{match?.foundItem?.title || 'Unknown Item'}</strong>
-                  </p>
-                  <p style={{ fontSize: '13px', color: '#666' }}>{match?.reason}</p>
+                  <p style={{ margin: '4px 0' }}><strong>{match.lostItem.title}</strong> ↔️ <strong>{match.foundItem.title}</strong></p>
+                  <p style={{ fontSize: '13px', color: '#666' }}>{match.reason}</p>
                 </div>
                 <div style={{ textAlign: 'right' }}>
-                  <span style={{ fontSize: '20px', fontWeight: '800' }}>{match?.confidence ?? 0}%</span>
+                  <span style={{ fontSize: '20px', fontWeight: '800' }}>{match.confidence}%</span>
                   <p style={{ fontSize: '11px', color: '#94a3b8' }}>Confidence</p>
                 </div>
               </div>
@@ -114,11 +105,11 @@ export default function ViewItems() {
         ) : items.length === 0 ? (
           <p>No reports found. Be the first to post one!</p>
         ) : (
-          items.map((item, index) => (
-            <ItemCard key={item?.id || item?._id || index} item={item} />
-          ))
+          items.map((item) => <ItemCard key={item.id} item={item} />)
         )}
       </div>
     </section>
   );
 }
+
+Find what wrong with this code
