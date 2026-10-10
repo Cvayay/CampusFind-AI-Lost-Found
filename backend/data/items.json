@@ -63,5 +63,31 @@
     "status": "open",
     "imageUrl": null,
     "createdAt": "2026-03-31T08:56:37.883Z"
+  },
+  {
+    "id": "2e6b404f-30da-40cd-a98e-8b5cd5fd0ef5",
+    "type": "lost",
+    "title": "earbus",
+    "category": "Electrionics",
+    "description": "dent on cap",
+    "location": "410",
+    "contactName": "shivaji",
+    "contactInfo": "6458484651",
+    "status": "open",
+    "imageUrl": null,
+    "createdAt": "2026-10-10T19:07:30.821Z"
+  },
+  {
+    "id": "350bd7f3-b7a3-47a0-937d-3824f86976aa",
+    "type": "found",
+    "title": "earbuds",
+    "category": "Other",
+    "description": "dent on cap",
+    "location": "410",
+    "contactName": "ayush",
+    "contactInfo": "",
+    "status": "open",
+    "imageUrl": null,
+    "createdAt": "2026-10-10T19:08:10.340Z"
   }
 ]
