@@ -50,5 +50,18 @@
     "status": "open",
     "image": null,
     "createdAt": "2026-03-25T09:59:58.615Z"
+  },
+  {
+    "id": "eedd49a9-6710-46bd-8633-0265466c14eb",
+    "type": "lost",
+    "title": "earbuds",
+    "category": "Electrionics",
+    "description": "boat",
+    "location": "lab 402",
+    "contactName": "ayush",
+    "contactInfo": "4575789403",
+    "status": "open",
+    "imageUrl": null,
+    "createdAt": "2026-03-31T08:56:37.883Z"
   }
 ]
