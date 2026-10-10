@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+Import { useEffect, useState } from 'react';
 import ItemCard from '../components/ItemCard.jsx';
 
 export default function ViewItems() {
@@ -111,3 +111,5 @@ export default function ViewItems() {
     </section>
   );
 }
+
+Find what wrong with this code
