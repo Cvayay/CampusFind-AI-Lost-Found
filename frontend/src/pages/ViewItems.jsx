@@ -1,4 +1,4 @@
-Import { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import ItemCard from '../components/ItemCard.jsx';
 
 export default function ViewItems() {
