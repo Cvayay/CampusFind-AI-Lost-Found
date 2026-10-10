@@ -112,4 +112,3 @@ export default function ViewItems() {
   );
 }
 
-Find what wrong with this code
